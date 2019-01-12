@@ -4,7 +4,7 @@ const app = express();
 
 app.get("/", (req, res)=>{
     res.status(200);    
-    res.send('<h1 style="text-align: center;">Sentiment Analysis API!!</h1>');
+    res.send('<div style="text-align: center;"><h1>Sentiment Analysis API!!</h1><br><h3>API available in this route /api/v1/sentiment </h3></div>');
 });
 
 app.use("/api/v1/sentiment", sentimentRoute);
