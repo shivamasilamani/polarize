@@ -6,11 +6,13 @@ const nNetwork = new brain.recurrent.LSTM();
 module.exports = {
 
     trainData: function(req, res){
+        console.log("Before Processing....");
         const trainingData = data.map(item => ({
             input: item.input,
             output: item.output
         }));
 
+        console.log("Before Training....");
         nNetwork.train(trainingData, {
             iterations: 1000,
             log: (error) => {
