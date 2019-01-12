@@ -7,4 +7,9 @@ app.get("/", (req, res)=>{
     res.send("Sentiment Analysis API!!");
 });
 
-app.listen(8000, () => console.log('Server running on http://localhost:8000/'));
+const port = process.env.PORT;
+if(port){
+    app.listen(port, () => console.log('Server running on http://localhost:' + port + '/'));
+}else{
+    app.listen(8000, () => console.log('Server running on http://localhost:8000/'));
+}
