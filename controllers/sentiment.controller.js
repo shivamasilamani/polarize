@@ -5,7 +5,7 @@ const nNetwork = new brain.recurrent.LSTM();
 module.exports = {
     analyzeText: function(req, res){
 
-        const trainedModel  = fs.readFileSync('./ml/trump.model.json', 'utf8');
+        const trainedModel  = fs.readFileSync('./ml/tweetsentiment.model.json', 'utf8');
         nNetwork.fromJSON(JSON.parse(trainedModel));
 
         const output = nNetwork.run(req.body.text);

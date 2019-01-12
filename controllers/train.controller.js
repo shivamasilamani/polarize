@@ -24,7 +24,7 @@ module.exports = {
 
         const trainedModel = nNetwork.toJSON();
 
-        const writerStream = fs.createWriteStream('./ml/trump.model.json');
+        const writerStream = fs.createWriteStream('./ml/tweetsentiment.model.json');
         writerStream.write(JSON.stringify(trainedModel),'UTF8');
         writerStream.end();
 
