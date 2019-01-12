@@ -14,8 +14,4 @@ route.post("/", (req,res)=>{
     sentimentController.analyzeText(req, res);
 });
 
-route.get("/train", (req,res)=>{
-    sentimentController.trainData(req, res);
-});
-
 module.exports = route;
