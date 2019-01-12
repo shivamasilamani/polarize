@@ -1,10 +1,17 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+const sentimentRoute = require("./routes/sentiment.route");
 const app = express();
 
 app.get("/", (req, res)=>{
     res.status(200);    
-    res.send("Sentiment Analysis API!!");
+    res.send('<h1 style="text-align: center;">Sentiment Analysis API!!</h1>');
+});
+
+app.use("/api/v1/sentiment", sentimentRoute);
+
+app.use(function (req, res, next) {
+    res.header("Content-Type","application/json");
+    next();
 });
 
 const port = process.env.PORT;
