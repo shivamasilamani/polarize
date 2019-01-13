@@ -1,6 +1,7 @@
 const express = require('express');
 const sentimentRoute = require("./routes/sentiment.route");
 const trainRoute = require("./routes/train.route");
+const docsRoute = require("./routes/docs.route");
 const app = express();
 
 app.get("/", (req, res)=>{
@@ -10,6 +11,8 @@ app.get("/", (req, res)=>{
 
 app.use("/api/v1/sentiment", sentimentRoute);
 app.use("/api/v1/train", trainRoute);
+
+app.use('/api/v1/docs', docsRoute);
 
 app.use(function (req, res, next) {
     res.header("Content-Type","application/json");

@@ -1,0 +1,76 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "description": "This API extracts the sentiment from text",
+      "version": "1.0.0",
+      "title": "Polarize",
+      "contact": {
+        "email": "1@outlook.com"
+      },
+      "license": {
+        "name": "Apache 2.0",
+        "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+      }
+    },
+    "host": "localhost:8000",
+    "basePath": "/api/v1",
+    "tags": [
+      {
+        "name": "polarize",
+        "description": "Sentiment Analysis API",
+        "externalDocs": {
+          "description": "Sentiment Analysis API",
+          "url": "http://localhost:8000"
+        }
+      }
+    ],
+    "schemes": [
+      "http"
+    ],
+    "paths": {
+      "/sentiment": {
+        "post": {
+          "tags": [
+            "sentiment"
+          ],
+          "summary": "Extract sentiment from text",
+          "description": "",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "description": "Pet object that needs to be added to the store",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/Sentiment"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful extraction"
+            },
+            "405": {
+              "description": "Invalid input"
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "Sentiment": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
