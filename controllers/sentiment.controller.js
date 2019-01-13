@@ -23,8 +23,8 @@ module.exports = {
         const output = nNetwork.run(fixLengths(encode(req.body.text)));
         let sentiment = {
             Positive :  Math.floor(output.Positive * 100) + "%",
-            Negative :  Math.floor(output.Negative * 100) + "%",
-            Neutral :  Math.floor(output.Neutral * 100) + "%"
+            Negative :  Math.floor(output.Negative * 100) + "%"
+            //Neutral :  Math.floor(output.Neutral * 100) + "%"
         };
 
         res.status(200);
